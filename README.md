@@ -73,3 +73,7 @@ We welcome contributions to the R2-D2 Morse Code Translator! If you have ideas f
 6.  **Open a Pull Request** to the `development` branch of this repository.
 
 ---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
