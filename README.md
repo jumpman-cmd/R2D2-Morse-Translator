@@ -56,3 +56,20 @@ We welcome contributions to the R2-D2 Morse Code Translator! If you have ideas f
 6.  **Open a Pull Request** to the `development` branch of this repository.
 
 ---
+
+## How to Contribute
+
+We welcome contributions to the R2-D2 Morse Code Translator! If you have ideas for improvements, new features, or bug fixes, please follow these guidelines:
+
+1.  **Fork the repository.**
+2.  **Create a new branch** for your feature or bug fix (e.g., `feature/new-feature` or `bugfix/fix-audio`).
+3.  **Make your changes.**
+    - **Feature Ideas:** New UI themes, more robust error handling, translating special characters.
+    - **Bug Fixes:** Address any reported issues or unexpected behavior.
+    - **Refactoring:** Improve code readability, performance, or maintainability.
+    - **Documentation:** Enhance the README, add Javadoc, or create user guides.
+4.  **Commit your changes** with clear and concise commit messages.
+5.  **Push your branch** to your forked repository.
+6.  **Open a Pull Request** to the `development` branch of this repository.
+
+---
