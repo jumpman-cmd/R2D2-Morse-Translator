@@ -2,6 +2,14 @@
 
 A command-line and GUI application designed to translate human language to Morse code and vice-versa, specifically crafted for R2-D2's galactic communications needs.
 
+## Project Structure
+
+Understanding the layout of the project can help with navigation and contribution.
+
+![Project File Structure](assets/1.png)
+
+---
+
 ## About the Project
 
 This project aims to provide a reliable and easy-to-use tool for converting text into Morse code signals and decoding Morse back into human-readable text. It was developed with a focus on clear functionality and an intuitive user interface, resembling a console from a galaxy far, far away.
