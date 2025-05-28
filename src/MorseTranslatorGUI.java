@@ -29,16 +29,23 @@ public class MorseTranslatorGUI extends JFrame {
     private JTextArea outputText;
     private JButton encodeButton;
     private JButton decodeButton;
-    private JButton playButton; // For future Morse audio playback
+    private JButton playButton;
     private JButton clearButton;
 
+    // --- Audio Player Instance ---
+    private MorseAudioPlayer audioPlayer;
+    private static final int MORSE_UNIT_DURATION_MS = 60; 
+
     public MorseTranslatorGUI() {
+    
+        audioPlayer = new MorseAudioPlayer(MORSE_UNIT_DURATION_MS);
+
         // --- 1. Frame Setup ---
-        setTitle("Yanga Mdede - R2-D2's Universal Translator Console"); // More thematic title
-        setSize(750, 580); // Adjusted size for more space
+        setTitle("Yanga Mdede - R2-D2's Universal Translator Console");
+        setSize(750, 580);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Center window
-        getContentPane().setBackground(DARK_BACKGROUND); // Set overall background
+        getContentPane().setBackground(DARK_BACKGROUND);
 
         // Use a GridBagLayout for flexible, weighted layout
         setLayout(new GridBagLayout());
@@ -161,23 +168,60 @@ public class MorseTranslatorGUI extends JFrame {
             }
         });
 
+        // IMPORTANT: Playback on a separate thread to prevent GUI freeze!
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: Implement Morse audio playback logic here
-                JOptionPane.showMessageDialog(MorseTranslatorGUI.this,
-                                              "Audio playback feature coming soon to a galaxy near you!",
-                                              "Feature Under Development",
-                                              JOptionPane.INFORMATION_MESSAGE);
+                final String morseToPlay = outputText.getText(); // Get Morse from output area
+
+                // Check for placeholder text or empty output before playing
+                if (morseToPlay.isEmpty() || morseToPlay.equals("Translated signals will appear here...")) {
+                    JOptionPane.showMessageDialog(MorseTranslatorGUI.this,
+                                                  "Please translate some text to Morse code first!",
+                                                  "No Morse Code to Play",
+                                                  JOptionPane.INFORMATION_MESSAGE);
+                    return; // Stop if no valid Morse is present
+                }
+
+                // Create and start a new thread for audio playback
+                new Thread(() -> {
+                    // Disable buttons on the Event Dispatch Thread (EDT) while playing
+                    SwingUtilities.invokeLater(() -> {
+                        encodeButton.setEnabled(false);
+                        decodeButton.setEnabled(false);
+                        playButton.setEnabled(false);
+                        clearButton.setEnabled(false);
+                    });
+
+                    try {
+                        audioPlayer.playMorseCode(morseToPlay); // Call the audio player method
+                    } catch (Exception ex) {
+                        // Show an error message on the EDT if something goes wrong during playback
+                        SwingUtilities.invokeLater(() -> {
+                            JOptionPane.showMessageDialog(MorseTranslatorGUI.this,
+                                                          "Error during audio playback: " + ex.getMessage(),
+                                                          "Audio Error",
+                                                          JOptionPane.ERROR_MESSAGE);
+                        });
+                    } finally {
+                        // Re-enable buttons on the EDT after playback is complete or an error occurs
+                        SwingUtilities.invokeLater(() -> {
+                            encodeButton.setEnabled(true);
+                            decodeButton.setEnabled(true);
+                            playButton.setEnabled(true);
+                            clearButton.setEnabled(true);
+                        });
+                    }
+                }).start(); // This starts the new thread
             }
         });
 
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                inputText.setText("Enter your galactic transmission here..."); // Reset placeholder
+                inputText.setText("Enter your galactic transmission here..."); // Reset input placeholder
                 inputText.setForeground(TEXT_COLOR.darker().darker()); // Dim placeholder
-                outputText.setText("Translated signals will appear here..."); // Reset placeholder
+                outputText.setText("Translated signals will appear here..."); // Reset output placeholder
                 outputText.setForeground(TEXT_COLOR.darker().darker()); // Dim placeholder
             }
         });
