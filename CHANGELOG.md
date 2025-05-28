@@ -27,3 +27,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Refined GUI aesthetics to "Galactic Console" theme.
 - Adjusted Morse audio unit duration for optimal playback speed.
+
+The initial release of the R2-D2 Morse Code Translator.
+
+Features include:
+
+- Text to Morse Code translation
+- Morse Code to Text translation
+- Interactive GUI with R2-D2 theme
+- Audio playback for Morse code
