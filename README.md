@@ -12,3 +12,34 @@ This project aims to provide a reliable and easy-to-use tool for converting text
 - **Morse to Text Translation:** Decode Morse code sequences back into human-readable English text.
 - **Intuitive GUI:** A custom-themed graphical user interface for easy interaction, designed with a "Galactic Console" aesthetic.
 - **Morse Audio Playback:** Listen to the translated Morse code with adjustable speed, bringing the communication to life!
+
+---
+
+## How to Run
+
+To get the R2-D2 Morse Code Translator up and running on your local machine:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/jumpman-cmd/R2D2-Morse-Translator.git
+    cd R2D2-Morse-Translator
+    ```
+
+2.  **Compile the Java files:**
+    Ensure you have a Java Development Kit (JDK) installed.
+    Navigate to the project root directory in your terminal and run:
+
+    ```bash
+    javac -d out src/*.java
+    ```
+
+    _This will compile all Java source files and place the compiled `.class` files into the `out` directory._
+
+3.  **Run the GUI application:**
+    ```bash
+    java -cp out MorseTranslatorGUI
+    ```
+    _The R2-D2 Morse Translator GUI window should now appear._
+
+---
