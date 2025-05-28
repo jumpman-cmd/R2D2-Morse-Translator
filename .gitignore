@@ -1,0 +1,5 @@
+# Compiled Java application JAR
+R2D2Translator.jar
+
+# Ignore the compiled output directory
+out/
