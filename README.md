@@ -23,6 +23,22 @@ This project aims to provide a reliable and easy-to-use tool for converting text
 
 ---
 
+...
+
+## Screenshots
+
+Here are some visual examples of the R2-D2 Morse Translator GUI in action.
+
+### Main Interface (Initial State)
+
+![GUI Initial State](assets/2.png)
+
+### Text to Morse Translation Example
+
+![GUI Translation Example](assets/3.png)
+
+---
+
 ## How to Run
 
 To get the R2-D2 Morse Code Translator up and running on your local machine:
