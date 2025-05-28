@@ -1,5 +1,5 @@
 import javax.sound.sampled.*;
-import javax.swing.JOptionPane; // Used for showing errors if audio line is unavailable
+import javax.swing.JOptionPane; /* Used for showing errors if audio line is unavailable */
 
 public class MorseAudioPlayer {
 
