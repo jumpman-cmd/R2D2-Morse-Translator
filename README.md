@@ -41,6 +41,29 @@ Here are some visual examples of the R2-D2 Morse Translator GUI in action.
 
 ## How to Run
 
+---
+
+## Download & Run the Application
+
+For users who want to run the R2-D2 Morse Translator without compiling the source code:
+
+1.  **Ensure you have Java installed:** You'll need a Java Runtime Environment (JRE) or Java Development Kit (JDK) (version 8 or higher is recommended) installed on your system. You can download it from [Oracle's Java website](https://www.java.com/download/) or [Adoptium](https://adoptium.net/).
+
+2.  **Download the Executable JAR:**
+
+    - Go to the [Releases section of this GitHub repository](https://github.com/jumpman-cmd/R2D2-Morse-Translator/releases) (Note: you'll create a release in the next step!).
+    - Download the latest `R2D2Translator.jar` file from the most recent release.
+
+3.  **Run the JAR file:**
+    - **Windows/macOS:** In most cases, you can simply **double-click** the `R2D2Translator.jar` file to launch the application.
+    - **All OS (Command Line):** Open your terminal or command prompt, navigate to the directory where you downloaded the `R2D2Translator.jar` file, and run:
+      ```bash
+      java -jar R2D2Translator.jar
+      ```
+      The R2-D2 Morse Translator GUI window should now appear.
+
+---
+
 To get the R2-D2 Morse Code Translator up and running on your local machine:
 
 1.  **Clone the repository:**
