@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 
 public class MorseTranslatorGUI extends JFrame {
 
-    // --- Custom Color Palette (Galactic Console Theme) ---
+    // Custom Color Palette (Galactic Console Theme)
     private static final Color DARK_BACKGROUND = new Color(15, 15, 25);     // Very dark indigo-black
     private static final Color PANEL_BACKGROUND = new Color(35, 45, 55);    // Rich dark slate grey
     private static final Color TEXT_AREA_BACKGROUND = new Color(25, 30, 35); // Slightly lighter than background for text areas
