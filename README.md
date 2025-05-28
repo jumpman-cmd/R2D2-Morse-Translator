@@ -43,3 +43,16 @@ To get the R2-D2 Morse Code Translator up and running on your local machine:
     _The R2-D2 Morse Translator GUI window should now appear._
 
 ---
+
+## How to Contribute
+
+We welcome contributions to the R2-D2 Morse Code Translator! If you have ideas for improvements, new features, or bug fixes, please follow these guidelines:
+
+1.  **Fork the repository.**
+2.  **Create a new branch** for your feature or bug fix (e.g., `feature/new-feature` or `bugfix/fix-audio`).
+3.  **Make your changes.**
+4.  **Commit your changes** with clear and concise commit messages.
+5.  **Push your branch** to your forked repository.
+6.  **Open a Pull Request** to the `development` branch of this repository.
+
+---
